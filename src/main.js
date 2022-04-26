@@ -8,10 +8,13 @@ import ant from './hooks/useAntComponent'
 // 引入全局组件
 import global from './hooks/useComponent'
 
+// 引入dayjs插件
+import dayjs from './hooks/useTime';
 // 引入状态管理
 import store from './store/index'
 
 // 引入路由
 import router from './router/index'
 
-createApp(App).use(ant).use(global).use(store).use(router).mount('#app')
+
+createApp(App).use(ant).use(dayjs).use(global).use(store).use(router).mount('#app')
