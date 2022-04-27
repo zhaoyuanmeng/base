@@ -88,7 +88,7 @@ function setButtonState(state) {
 function blobToObj(blob, callBack) {
   console.log("blob", blob);
   let reader = new FileReader();
-  var res = {};
+  let res = {};
   reader.readAsBinaryString(blob);
   reader.onload = function () {
     res = JSON.parse(this.result);

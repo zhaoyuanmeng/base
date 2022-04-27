@@ -1,6 +1,15 @@
 <template>
   <div>测试vuex</div>
   <p>{{ a }}</p>
+
+  <div>测试 剧名插槽</div>
+  <testslot>
+    <template v-slot:default="slotProp">
+      <i class="fas fa-check"></i>
+      <span class="green">{{ slotProp.item }}</span>
+      <span class="green">{{ slotProp }}</span>
+    </template>
+  </testslot>
 </template>
 
 <script setup>
@@ -10,7 +19,7 @@
 import { getCurrentInstance } from "vue";
 import { ref } from "vue";
 import { useStore } from "vuex";
-
+import testslot from "@/components/TestSlot.vue";
 // ====================引入模块结束=============================//
 
 // ====================变量声明部分=============================//
@@ -42,4 +51,8 @@ const getList = () => {};
 // ====================其他end ============================//
 </script>
 
-<style scoped></style>
+<style scoped>
+.green {
+  color: aqua;
+}
+</style>

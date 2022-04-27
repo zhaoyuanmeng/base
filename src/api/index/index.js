@@ -8,3 +8,4 @@ export const getData = (data) => {
     params:data
   })
 }
+

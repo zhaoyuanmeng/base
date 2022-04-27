@@ -7,6 +7,8 @@ const useHttp = axios.create({
   timeout: 20000,
 })
 
+
+
 useHttp.defaults.withCredentials = true
 
 // request 事先统一处理
@@ -38,6 +40,5 @@ useHttp.interceptors.response.use(
     })
   }
 )
-
 
 export default useHttp

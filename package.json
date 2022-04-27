@@ -11,6 +11,8 @@
     "ant-design-vue": "^3.2.0",
     "axios": "^0.26.1",
     "dayjs": "^1.11.1",
+    "stylus": "^0.57.0",
+    "stylus-loader": "^6.2.0",
     "vue": "^3.2.25",
     "vue-router": "4",
     "vuex": "^4.0.2",
