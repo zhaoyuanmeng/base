@@ -11,10 +11,12 @@
           type="checkbox"
           :name="item.key"
           @click="clickbox"
-          @mouseover="aaaa"
-          :checked="isChecked(item.key)"
+          :checked="item.checked"
           :disabled="item.disabled"
         />
+        <!-- :checked="item.checked" -->
+        <!-- :checked="isChecked(item.key)" -->
+
         <div class="checkbox-title">{{ item.title }}</div>
         <!-- CheckBox内容-->
       </div>
@@ -39,7 +41,8 @@ export default {
   data() {
     return {
       showChildren: true, // 是否展开根目录
-      nodes: ["1", "1-1", "1-1-2", "1-2-2"],
+      // nodes: ["1", "1-1", "1-1-2", "1-2-2"],
+      nodes: [],
     };
   },
   computed: {
@@ -50,16 +53,34 @@ export default {
   },
   methods: {
     clickbox(e) {
-      console.log("点击");
-      // 点击CheckBox时需要加入或删除已选中this.nodes的节点数组中
+      // 点击CheckBox时需要加入或删除已选中nodes的节点数组中
       const checked = e.target.checked;
       const key = e.target.name;
-      const nodes = this.nodes; // this.nodes是全局变量，便于递归组件记录选中节点
+      const nodes = this.nodes; // nodes是全局变量，便于递归组件记录选中节点
       if (checked) {
         if (!nodes.includes(key)) {
+          console.log("ss", key);
+          let list = this.list;
+          list[0].children[0].checked = true;
+          list[0].children[1].checked = true;
+          list[0].children[2].checked = true;
+          list[0].children[0].children[0].checked = true;
+          list[0].children[0].children[1].checked = true;
+          list[0].children[0].children[2].checked = true;
+          this.list = list;
+          return;
           this.nodes.push(key);
         }
       } else {
+        let list = this.list;
+        list[0].children[0].checked = false;
+        list[0].children[1].checked = false;
+        list[0].children[2].checked = false;
+        list[0].children[0].children[0].checked = false;
+        list[0].children[0].children[1].checked = false;
+        list[0].children[0].children[2].checked = false;
+        this.list = list;
+        return;
         this.nodes = nodes.filter((item) => {
           return key !== item;
         });
@@ -86,7 +107,7 @@ export default {
       this.showChildren = !this.showChildren;
     },
     isChecked(key) {
-      // 查看是否已经存在于选中节点中
+      console.log("asdasda", key);
       return this.nodes.includes(key);
     },
   },
