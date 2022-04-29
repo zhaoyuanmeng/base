@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const useHttp = axios.create({
   // baseURL: process.env.VUE_APP_API_BASE_URL, // url = base url + request url
-  baseURL:'http://10.2.2.2',
+  baseURL:'/api/',
   // 超时时间
   timeout: 20000,
 })

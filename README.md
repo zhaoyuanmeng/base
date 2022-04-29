@@ -40,7 +40,7 @@
 ## 存在的问题
 
 - hooks 和 utils 有些是重复的需要抽离
-- 学会封装组件（组件库 5-1 学会） Tree 组件 table 组件 form 组件
+- 学会封装组件（组件库 5-1 学会） Tree 组件 table 组件 form 组件 使用 vuese 搭建自己的组件库文档
 - 若以框架的一些常用源码设计
 - 小程序
 - App
@@ -52,3 +52,7 @@
 - vue-router 基础路由
 - vuex 全局状态管理
 - 封装组件
+
+## vue 遇到的问题
+
+- 遇到了选择框太多 v-modal 失效的问题 this.$forceUpdate()

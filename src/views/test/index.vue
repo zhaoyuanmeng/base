@@ -19,6 +19,7 @@
 import { getCurrentInstance } from "vue";
 import { ref } from "vue";
 import { useStore } from "vuex";
+import { getData } from "@/api/index/index.js";
 import testslot from "@/components/TestSlot.vue";
 // ====================引入模块结束=============================//
 
@@ -35,12 +36,15 @@ a.value = store.state.user.count;
 
 const onclick = () => {};
 const onAaa = () => {};
-
 // ====================逻辑事件事件交互end============================//
 
 // ====================请求接口数据 ============================//
 
-const getList = () => {};
+const getList = async () => {
+  let res = await getData();
+  console.log("res", res);
+};
+getList();
 
 // ====================请求接口end ============================//
 
