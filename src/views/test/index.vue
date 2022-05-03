@@ -10,6 +10,16 @@
       <span class="green">{{ slotProp }}</span>
     </template>
   </testslot>
+
+  <div>测试table组件</div>
+  {{ seleItmes }}
+  <tableplus
+    :columns="columns1"
+    :data="data1"
+    strip
+    :seleItmes="seleItmes"
+    @update:seleItmes="(item) => (seleItmes = item)"
+  ></tableplus>
 </template>
 
 <script setup>
@@ -21,6 +31,7 @@ import { ref } from "vue";
 import { useStore } from "vuex";
 import { getData } from "@/api/index/index.js";
 import testslot from "@/components/TestSlot.vue";
+import tableplus from "@/components/Table.vue";
 // ====================引入模块结束=============================//
 
 // ====================变量声明部分=============================//
@@ -30,6 +41,24 @@ const store = useStore();
 const a = ref("");
 const timeUtils = gol.$timeUtils;
 a.value = store.state.user.count;
+const columns1 = ref([
+  {
+    title: "name",
+    key: "name",
+  },
+  { title: "age", key: "age" },
+]);
+const data1 = ref([
+  {
+    id: 1,
+    name: "zyd",
+    age: 24,
+  },
+  { id: 2, name: "jac", age: 24 },
+]);
+// 当前用户选择了哪些
+const seleItmes = ref([]);
+
 // ====================变量声明end=============================//
 
 // ====================逻辑事件交互部分 ============================//
