@@ -1,15 +1,13 @@
-import axios from 'axios'
+import axios from "axios";
 
 const useHttp = axios.create({
   // baseURL: process.env.VUE_APP_API_BASE_URL, // url = base url + request url
-  baseURL:'/api/',
+  baseURL: "/api/",
   // 超时时间
   timeout: 20000,
-})
+});
 
-
-
-useHttp.defaults.withCredentials = true
+useHttp.defaults.withCredentials = true;
 
 // request 事先统一处理
 // useHttp.interceptors.request.use(config => {
@@ -24,21 +22,21 @@ useHttp.defaults.withCredentials = true
 useHttp.interceptors.response.use(
   function (response) {
     if (Number(response.data.code) === 0) {
-      return response.data
+      return response.data;
     } else {
       return Promise.reject({
         err: response.data,
-        msg: response.data.msg
-      })
+        msg: response.data.msg,
+      });
     }
   },
   function (error) {
     // Do something with response error
     return Promise.reject({
       err: error.data,
-      msg: error.data.msg
-    })
+      msg: error.data.msg,
+    });
   }
-)
+);
 
-export default useHttp
+export default useHttp;

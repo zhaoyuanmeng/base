@@ -15,7 +15,7 @@
  * @return {type}
  */
 
- if (!window.localStorage.getItem("version")) {
+if (!window.localStorage.getItem("version")) {
   window.localStorage.setItem("version", 1);
 }
 let dexie = {
@@ -289,32 +289,18 @@ let dexie = {
 // this.$indexDB.selectData("indexDBname","tablename","indexkey", (res) => { console.log(res);}); //获取数据-查
 // this.$indexDB.clearTable("indexDBname","tablename", (res) => {console.log(res);}); //清空库表，不是清库，是清表数据
 
-
-
-const test = (a,fn) => { 
-  if(a == 'a'){
-    fn(a)
-  }else{
-    return 0
+const test = (a, fn) => {
+  if (a == "a") {
+    fn(a);
+  } else {
+    return 0;
   }
-}
+};
 
 /*
  *@Author: 赵元达
  *@Date: 2022-04-24 17:54:03
- *@parms: 
+ *@parms:
  *@Description: data
-*/
-const fn = (data) => { 
-
-  //写逻辑代码
-  console.log(data);
-}
-test('a',fn)
-
-
-
-
-
-
+ */
 
