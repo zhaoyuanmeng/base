@@ -16,7 +16,6 @@
   <tableplus
     :columns="columns1"
     :data="data1"
-    strip
     :seleItmes="seleItmes"
     @update:seleItmes="(item) => (seleItmes = item)"
   ></tableplus>
