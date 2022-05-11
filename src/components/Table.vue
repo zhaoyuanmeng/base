@@ -57,7 +57,7 @@ export default {
       type: Array,
       default: () => [],
     },
-  },
+  }, 
   data() {
     return {};
   },
@@ -112,6 +112,7 @@ export default {
     // 全选
     changeAll(e) {
       if (e.target.checked) {
+        // 直接传所有的数据过去
         this.$emit("update:seleItmes", this.data);
       } else {
         this.$emit("update:seleItmes", []);

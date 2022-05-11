@@ -40,6 +40,7 @@ const store = useStore();
 const a = ref("");
 const timeUtils = gol.$timeUtils;
 a.value = store.state.user.count;
+
 const columns1 = ref([
   {
     title: "name",
