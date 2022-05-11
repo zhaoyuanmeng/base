@@ -26,6 +26,11 @@
   - Path Intellisense
   - Shades of Purple
   - Visual Studio IntelliCode (代码补全 特别好用)
+  - CSS Peek 快速查看 css 并跳转对应的文件
+  - Peacock 更改 vscode 环境的颜色
+  - Colorize 颜色预览
+  - Import Cost 查看包大小
+  - vue-helper vue 辅助工具
 
 ## 常用软件
 
