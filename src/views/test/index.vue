@@ -28,7 +28,7 @@
 import { getCurrentInstance } from "vue";
 import { ref } from "vue";
 import { useStore } from "vuex";
-import { getData } from "@/api/index/index.js";
+import { getData, test } from "@/api/index/index.js";
 import testslot from "@/components/TestSlot.vue";
 import tableplus from "@/components/Table.vue";
 // ====================引入模块结束=============================//
@@ -64,7 +64,11 @@ const seleItmes = ref([]);
 // ====================逻辑事件交互部分 ============================//
 
 const onclick = () => {};
-const onAaa = () => {};
+const onAaa = async () => {
+  let res = await test();
+  console.log("res------", res);
+};
+onAaa();
 // ====================逻辑事件事件交互end============================//
 
 // ====================请求接口数据 ============================//
