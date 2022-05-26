@@ -16,3 +16,11 @@ export const test = (data) => {
     params: data,
   });
 };
+
+export const zhoutailun = (data) => {
+  return useHttp({
+    url: "/common/employees/list/" + data.currentPage + "/" + data.pageSize,
+    method: "post", //get | post
+    params: {},
+  });
+};
