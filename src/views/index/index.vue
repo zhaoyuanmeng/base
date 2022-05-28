@@ -18,7 +18,7 @@ export default {
     this.getData();
   },
   methods: {
-    getData() {
+    getData() { 
       this.treeData = data;
     },
     showNodes() {

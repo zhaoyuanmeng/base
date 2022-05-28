@@ -1,4 +1,15 @@
-<script setup></script>
+<script setup>
+import {getData} from "./api/index/index"
+
+const getList = async() => { 
+  let res = await getData()
+  // 逻辑
+
+}
+
+
+
+</script>
 
 <template>
   <div>
