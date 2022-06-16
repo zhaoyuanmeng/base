@@ -283,3 +283,16 @@ export const useArrayToTree = (data, parent) => {
   }
   return tree;
 };
+
+// 计算两个时间戳里面相隔的时间数
+export const DateDiff = (Date_end, Date_start) => {
+  let aDate, oDate1, oDate2, iDays;
+  Date_end = Date_end.split(" "); //将时间以空格划分为两个数组  第一个数组是 2019-05-20 第二个数组是 00：00：00
+  aDate = Date_end[0].split("-"); //获取第一个数组的值
+  oDate1 = new Date(aDate[0], aDate[1], aDate[2]); //将前半个数组以-拆分，每一个是一个数值
+  Date_start = Date_start.split(" ");
+  aDate = Date_start[0].split("-");
+  oDate2 = new Date(aDate[0], aDate[1], aDate[2]);
+  iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24); //把相差的毫秒数转换为天数
+  return iDays;
+};
