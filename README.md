@@ -31,6 +31,7 @@
   - Colorize 颜色预览
   - Import Cost 查看包大小
   - vue-helper vue 辅助工具
+  - autopunc 中文逗号自动转成英文
 
 ## 常用软件
 
